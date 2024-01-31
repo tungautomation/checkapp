@@ -69,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: const EdgeInsets.symmetric(vertical: 20),
           child: Column(
             children: [       
-              TextField(obscureText: event,decoration: InputDecoration(labelText:name,border:const OutlineInputBorder()),style: const TextStyle(fontSize: 20),),
+              TextField(obscureText: event,decoration: InputDecoration(labelText:name,border:const OutlineInputBorder(),prefixIcon: Icon(event != true?Icons.location_history_outlined:Icons.password)),style: const TextStyle(fontSize: 20),),
             ],
                 ),
         ),
