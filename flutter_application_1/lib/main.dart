@@ -41,24 +41,29 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Center(child: Text("Đăng nhập",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.amber,),)),
         backgroundColor: Colors.blue,
       ),
-      body:Center(        
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Input_Widget("Username",false),
-            Input_Widget("Passworks",true),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                TextButton(onPressed: (){}, child:const Text('Đăng kí',style: TextStyle(fontStyle: FontStyle.italic,color: Color.fromRGBO(61, 61, 60, 0.5)),)),
-                const Text(' || ',style: TextStyle(fontStyle: FontStyle.italic,color: Color.fromRGBO(61, 61, 60, 0.5)),),
-                TextButton(onPressed: (){}, child: const Text('Quên mật khẩu ?',style: TextStyle(fontStyle: FontStyle.italic,color: Color.fromRGBO(61, 61, 60, 0.5)),)),
-              ],
-            ),
-           OutlinedButton(onPressed: (){}, child: const Text('Đăng Nhập',))
-          ],
-        ),
-      ),
+      body:  
+         Center(
+           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const SizedBox(
+                width: 100,height: 100,
+                child: Icon(Icons.supervised_user_circle_outlined,size: 100),
+              ),
+              Input_Widget("Username",false),
+              Input_Widget("Passworks",true),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  TextButton(onPressed: (){}, child:const Text('Đăng kí',style: TextStyle(fontStyle: FontStyle.italic,color: Color.fromRGBO(61, 61, 60, 0.5)),)),
+                  const Text(' || ',style: TextStyle(fontStyle: FontStyle.italic,color: Color.fromRGBO(61, 61, 60, 0.5)),),
+                  TextButton(onPressed: (){}, child: const Text('Quên mật khẩu ?',style: TextStyle(fontStyle: FontStyle.italic,color: Color.fromRGBO(61, 61, 60, 0.5)),)),
+                ],
+              ),
+             OutlinedButton(onPressed: (){}, child: const Text('Đăng Nhập',))
+            ],
+                   ),
+         ),
     );
   }
   // ignore: non_constant_identifier_values, non_constant_identifier_names
@@ -69,7 +74,11 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: const EdgeInsets.symmetric(vertical: 20),
           child: Column(
             children: [       
-              TextField(obscureText: event,decoration: InputDecoration(labelText:name,border:const OutlineInputBorder(),prefixIcon: Icon(event != true?Icons.location_history_outlined:Icons.password)),style: const TextStyle(fontSize: 20),),
+              TextField(obscureText: event,decoration: InputDecoration(labelText:name,border:const OutlineInputBorder(),prefixIcon: Icon(event != true?Icons.location_history_outlined:Icons.lock_outline_rounded)),style: const TextStyle(fontSize: 20),
+              onChanged: (value) 
+              {
+                print(value);
+              },),
             ],
                 ),
         ),
