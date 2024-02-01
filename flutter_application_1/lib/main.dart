@@ -47,29 +47,34 @@ class _MyHomePageState extends State<MyHomePage> {
       body:  
           
              
-                Center(
-               child: SingleChildScrollView(
-                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      child:Image.asset('images/477290.png',),
-                    ),
-                    Input_Widget("Username",false,null),
-                    Input_Widget("Passworks",true,display),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        TextButton(onPressed: (){}, child:const Text('Đăng kí',style: TextStyle(fontStyle: FontStyle.italic,color: Color.fromRGBO(61, 61, 60, 0.5)),)),
-                        const Text(' || ',style: TextStyle(fontStyle: FontStyle.italic,color: Color.fromRGBO(61, 61, 60, 0.5)),),
-                        TextButton(onPressed: (){}, child: const Text('Quên mật khẩu ?',style: TextStyle(fontStyle: FontStyle.italic,color: Color.fromRGBO(61, 61, 60, 0.5)),)),
-                      ],
-                    ),
-                   OutlinedButton(onPressed: (){}, child: const Text('Đăng Nhập',)),
-                  ],
-                         ),
+                SingleChildScrollView(
+                  
+                 child: Padding(
+                   padding: const EdgeInsets.symmetric(vertical: 45),
+                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    
+                    children: [
+                      
+                      SizedBox(
+                        child:Image.asset('images/477290.png',),
+                      ),
+                      Input_Widget("Username",false,null),
+                      Input_Widget("Passworks",true,display),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          TextButton(onPressed: (){}, child:const Text('Đăng kí',style: TextStyle(fontStyle: FontStyle.italic,color: Color.fromRGBO(61, 61, 60, 0.5)),)),
+                          const Text(' || ',style: TextStyle(fontStyle: FontStyle.italic,color: Color.fromRGBO(61, 61, 60, 0.5)),),
+                          TextButton(onPressed: (){}, child: const Text('Quên mật khẩu ?',style: TextStyle(fontStyle: FontStyle.italic,color: Color.fromRGBO(61, 61, 60, 0.5)),)),
+                        ],
+                      ),
+                     OutlinedButton(onPressed: (){}, child: const Text('Đăng Nhập',)),
+                    ],
+                           ),
+                 ),
                ),
-             ),
+             
     );
   }
   // ignore: non_constant_identifier_values, non_constant_identifier_names
