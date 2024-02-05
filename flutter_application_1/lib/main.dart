@@ -3,9 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screen1.dart';
 
-
+bool on =false;
 void main() {
-  runApp(const MyApp());
+    runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -72,6 +72,8 @@ class Screen_1 extends State<MyHomePage> {
                       ),
                      OutlinedButton(onPressed: (){
                       Navigator.push(context, MaterialPageRoute(builder: (context) => const trangchu(),));
+                      on =true;
+                      print(on);
                      }, 
                      child: const Text('Đăng Nhập',)),
                     ],

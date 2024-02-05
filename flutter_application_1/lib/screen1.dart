@@ -6,9 +6,7 @@ class trangchu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     appBar: AppBar(
-      title: const  Center(child:  Text('Trang chủ')),backgroundColor: Colors.blue,
-      ),
+    body: AppBar(title: const Text("Trang chủ"),),
     );
   }
 }
