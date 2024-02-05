@@ -1,7 +1,8 @@
 // ignore_for_file: camel_case_types
 
 import 'package:flutter/material.dart';
-import 'package:passwordfield/passwordfield.dart';
+import 'package:flutter_application_1/screen1.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -31,9 +32,9 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<MyHomePage> createState() => Screen_1();
 }
-class _MyHomePageState extends State<MyHomePage> {
+class Screen_1 extends State<MyHomePage> {
     bool display = false;
   @override
   Widget build(BuildContext context) {
@@ -50,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 SingleChildScrollView(
                   
                  child: Padding(
-                   padding: const EdgeInsets.symmetric(vertical: 45),
+                   padding: const EdgeInsets.symmetric(vertical: 65),
                    child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     
@@ -69,7 +70,10 @@ class _MyHomePageState extends State<MyHomePage> {
                           TextButton(onPressed: (){}, child: const Text('Quên mật khẩu ?',style: TextStyle(fontStyle: FontStyle.italic,color: Color.fromRGBO(61, 61, 60, 0.5)),)),
                         ],
                       ),
-                     OutlinedButton(onPressed: (){}, child: const Text('Đăng Nhập',)),
+                     OutlinedButton(onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const trangchu(),));
+                     }, 
+                     child: const Text('Đăng Nhập',)),
                     ],
                            ),
                  ),
