@@ -6,17 +6,24 @@ class trangchu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
-      appBar:
-      
-       AppBar(
-        title: const Center(child: Text("Trang chủ")),
-        backgroundColor: Colors.blue,
-      
-        // iconTheme: IconThemeData(color: Colors.blue), 
-         elevation: 0.5,
-       )
-
+      body: Column(
+        children: [
+          Container(
+            height: 100,
+            child:const Padding(
+              padding: EdgeInsets.only(top: 30),
+              child: Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left:40),
+                    child: Text("Trang chủ",style: TextStyle(fontSize: 28,color: Color.fromARGB(221, 48, 47, 47))),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

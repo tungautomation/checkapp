@@ -6,6 +6,7 @@ import 'package:flutter_application_1/screen1.dart';
 bool on =false;
 void main() {
     runApp(const MyApp());
+
 }
 
 class MyApp extends StatelessWidget {
