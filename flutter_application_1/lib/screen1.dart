@@ -1,7 +1,11 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 class trangchu extends StatelessWidget {
   const trangchu({super.key});
+  
+  get color => null;
 
   @override
   Widget build(BuildContext context) {
@@ -12,18 +16,25 @@ class trangchu extends StatelessWidget {
             height: 100,
             child:const Padding(
               padding: EdgeInsets.only(top: 30),
-              child: Row(
+              child: Column(
                 children: [
-                  Padding(
-                    padding: EdgeInsets.only(left:40),
-                    child: Text("Trang chủ",style: TextStyle(fontSize: 28,color: Color.fromARGB(221, 48, 47, 47))),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(left:40),
+                        child: Text("Trang chủ",style: TextStyle(fontSize: 28,color: Color.fromARGB(221, 48, 47, 47))),
+                      ),
+                    ],
                   ),
                 ],
               ),
             ),
           ),
+        
         ],
       ),
     );
   }
+
+ 
 }
