@@ -50,7 +50,9 @@ class Screen_1 extends State<MyHomePage> {
              padding: const EdgeInsets.symmetric(vertical:82),
              child: SizedBox
              (
-                child:Image.asset('images/477290.png',),
+                child:Image.asset('images/477290.png'),
+
+
               ),
            ),
          ),

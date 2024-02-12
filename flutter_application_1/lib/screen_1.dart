@@ -15,20 +15,24 @@ class _Screen1 extends State<Screen1> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title:Row(children: [IconButton(onPressed: (){}, icon: const Icon(Icons.table_rows_rounded)),const Text("Trang chủ")],),backgroundColor: const Color.fromARGB(255, 246, 139, 132), ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            layout_messeage(const Color.fromARGB(255, 150, 150, 235)),
-            layout_messeage(const Color.fromARGB(255, 150, 150, 235)),
-            layout_messeage(const Color.fromARGB(255, 150, 150, 235)),
-            layout_messeage(const Color.fromARGB(255, 150, 150, 235)),
-            layout_messeage(const Color.fromARGB(255, 150, 150, 235)),
-            layout_messeage(const Color.fromARGB(255, 150, 150, 235)),
-            layout_messeage(const Color.fromARGB(255, 150, 150, 235)),
-            layout_messeage(const Color.fromARGB(255, 150, 150, 235)),
+      body: trang == 3?Screen1():thongtin_sever(),
+    );
+  }
 
-          ],
-        ),
+  SingleChildScrollView thongtin_sever() {
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          layout_messeage(const Color.fromARGB(255, 150, 150, 235)),
+          layout_messeage(const Color.fromARGB(255, 150, 150, 235)),
+          layout_messeage(const Color.fromARGB(255, 150, 150, 235)),
+          layout_messeage(const Color.fromARGB(255, 150, 150, 235)),
+          layout_messeage(const Color.fromARGB(255, 150, 150, 235)),
+          layout_messeage(const Color.fromARGB(255, 150, 150, 235)),
+          layout_messeage(const Color.fromARGB(255, 150, 150, 235)),
+          layout_messeage(const Color.fromARGB(255, 150, 150, 235)),
+
+        ],
       ),
     );
   }
@@ -36,7 +40,7 @@ class _Screen1 extends State<Screen1> {
   SizedBox layout_messeage(colorss) {
     return SizedBox(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 10),
               child: Container(
                 height: 100,
                 color:colorss,
