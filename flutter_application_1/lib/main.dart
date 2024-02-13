@@ -45,6 +45,7 @@ class Screen_1 extends State<MyHomePage> {
     child: Column(
       children: 
       [
+        // AppBar(title: Text("Sign"),),
          Center(
            child: Padding(
              padding: const EdgeInsets.symmetric(vertical:82),
@@ -79,12 +80,16 @@ class Screen_1 extends State<MyHomePage> {
            ),
          ),
          Padding(
-           padding: const EdgeInsets.symmetric(vertical: 32),
-           child: OutlinedButton(onPressed: (){
-            setState(() {
-              trang = 2;
-            });
-           },child: const Text("Đăng nhập",style: TextStyle(fontSize: 30))),
+           padding: const EdgeInsets.symmetric(vertical: 52),
+           child: SizedBox(
+            width:300,
+            height: 82,
+             child: OutlinedButton(onPressed: (){
+              setState(() {
+                trang = 2;
+              });
+             },child: const Text("Đăng nhập",style: TextStyle(fontSize: 30))),
+           ),
          )
       ],
     ),
