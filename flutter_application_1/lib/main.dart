@@ -97,9 +97,10 @@ class Screen_1 extends State<MyHomePage> {
              child: OutlinedButton(onPressed: (){
               setState(() {
                 trang = 2;
-                name ="Nguyễn Hữu tùng";
+                name ="Nguyễn Hữu Tùng";
               });
-             },child: const Text("Đăng nhập",style: TextStyle(fontSize: 30))),
+             }
+             ,child: const Text("Đăng nhập",style: TextStyle(fontSize: 30))),
            ),
          ),
       ],

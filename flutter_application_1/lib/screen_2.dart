@@ -8,24 +8,8 @@ class MainScreen extends StatelessWidget {
 
   Widget build(BuildContext context) {
    
-    return  Column(
-      children: [
-       Row(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(15),
-            child: Container(
-              width: 60,
-              height: 60,
-              child: SizedBox(child: Image.asset('images/477290.png')),
-              // decoration: const BoxDecoration(color: Colors.amber),
-            ),
-          ),
-          Text("Welcome!\n$name",style: TextStyle(fontWeight: FontWeight.w600),)
-        ],
-       ),
-      ],
+    return Container(
+      color: visiable_Light ==true?Colors.black:Colors.white,
     );
-
   }
 }

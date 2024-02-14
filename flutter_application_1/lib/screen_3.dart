@@ -11,7 +11,7 @@ class Screen3 extends StatefulWidget {
 class _Screen3 extends State<Screen3> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Column(
       
     );
   }
