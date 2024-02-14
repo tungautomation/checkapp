@@ -17,12 +17,7 @@ class _Screen1 extends State<Screen1> {
       appBar: AppBar(title:Row(children: [IconButton(onPressed: (){
         setState(() {
           selection = !selection;
-          print(selection);
-          Stack(
-            children: [
-              Container(width: 100,color:Colors.red,)
-            ],
-          );
+          print(selection); 
         });
       }, icon: const Icon(Icons.table_rows_rounded)),const Text("Trang chủ")],),backgroundColor: const Color.fromARGB(255, 246, 139, 132), ),
       body: trang == 3?Screen1():thongtin_sever(),

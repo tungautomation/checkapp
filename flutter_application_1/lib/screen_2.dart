@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/main.dart';
-
 
 class _screen2 extends StatefulWidget {
   const _screen2({ super.key });

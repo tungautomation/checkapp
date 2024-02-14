@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screen_1.dart';
 int trang = 0;
+bool visiable = true;
 void main() {
     runApp(const MyApp());
 }
@@ -32,9 +33,18 @@ class MyHomePage extends StatefulWidget {
 
 }
 class Screen_1 extends State<MyHomePage> {
+  bool visiable = true;
+  void onClickshowpasswword()
+  {
+   setState(() {
+     visiable = !visiable;
+   });
+  }
   
   Widget build(BuildContext context) {
     return Scaffold(
+      
+
 
       body: trang == 0?login_image():const Screen1(),
     );
@@ -63,10 +73,10 @@ class Screen_1 extends State<MyHomePage> {
             child: TextField(decoration: InputDecoration(labelText: "Username",prefixIcon: Icon(Icons.location_history_outlined)),)
            ),
          ),
-         const Padding(
-           padding: EdgeInsets.symmetric(vertical: 20,horizontal: 30),
+        Padding(
+           padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 30),
            child: SizedBox(
-            child: TextField(decoration: InputDecoration(labelText: "Passworks",prefixIcon: Icon(Icons.lock_outline_rounded),suffixIcon: Icon(Icons.remove_red_eye_outlined)),obscureText: true,)
+            child: TextField(decoration: InputDecoration(labelText: "Passworks",prefixIcon: Icon(Icons.lock_outline_rounded),suffixIcon: IconButton(onPressed: (){onClickshowpasswword();}, icon: Icon(Icons.remove_red_eye))),obscureText: visiable,)
            ),
          ),
          Padding(
@@ -90,9 +100,11 @@ class Screen_1 extends State<MyHomePage> {
               });
              },child: const Text("Đăng nhập",style: TextStyle(fontSize: 30))),
            ),
-         )
+         ),
       ],
     ),
   );
+
   }
   }
+  
