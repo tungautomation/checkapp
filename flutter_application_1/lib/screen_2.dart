@@ -10,6 +10,13 @@ class MainScreen extends StatelessWidget {
    
     return Container(
       color: visiable_Light ==true?Colors.black:Colors.white,
+      child: SingleChildScrollView(
+        child:Column(
+          children: [
+            
+          ],
+        ),
+      ),
     );
   }
 }
