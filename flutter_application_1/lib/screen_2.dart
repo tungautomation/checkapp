@@ -1,19 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screen_1.dart';
 
-class _screen2 extends StatefulWidget {
-  const _screen2({ super.key });
+class MainScreen extends StatelessWidget {
+  const MainScreen({super.key});
 
   @override
-  State<_screen2> createState() => __screen2();
-}
 
-class __screen2 extends State<_screen2> {
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      
+   
+    return  Column(
+      children: [
+       Row(
+        children: [
+          Padding(
+            padding: EdgeInsets.all(15),
+            child: Container(
+              width: 60,
+              height: 60,
+              child: SizedBox(child: Image.asset('images/477290.png')),
+              // decoration: const BoxDecoration(color: Colors.amber),
+            ),
+          ),
+          Text("Welcome!\n$name",style: TextStyle(fontWeight: FontWeight.w600),)
+        ],
+       ),
+      ],
     );
+
   }
 }
-
-  
