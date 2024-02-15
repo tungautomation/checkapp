@@ -18,7 +18,9 @@ class _Screen1 extends State<Screen1> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(backgroundColor: visiable_Light == true?Colors.black:Colors.white,title: 
-        Row(     mainAxisAlignment: MainAxisAlignment.spaceBetween,children: [
+        Row(     
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
 
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -27,6 +29,7 @@ class _Screen1 extends State<Screen1> {
                 
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
+
                   children: [
                     Container(width: 60,height: 60,color: Colors.white,child: Image.asset('images/477290.png')),
                     Padding(
@@ -38,7 +41,8 @@ class _Screen1 extends State<Screen1> {
                     setState(() {
                       visiable_Light = !visiable_Light;
                     });
-                  }, icon: Icon(visiable_Light == true?Icons.light_mode:Icons.light_mode_outlined,color: visiable_Light == true?Colors.white:Colors.black))
+                  },
+                   icon: Icon(visiable_Light == true?Icons.light_mode:Icons.light_mode_outlined,color: visiable_Light == true?Colors.white:Colors.black))
 
                   ],
 
