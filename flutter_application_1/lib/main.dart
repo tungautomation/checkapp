@@ -64,7 +64,6 @@ class Screen_1 extends State<MyHomePage> {
                 
                 child:Image.asset('images/477290.png'),
 
-
               ),
            ),
          ),
@@ -107,7 +106,5 @@ class Screen_1 extends State<MyHomePage> {
       ],
     ),
   );
-
   }
   }
-  

@@ -62,7 +62,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - images/477290.png
-    - don_vi_hanh_chinh.json
+    - assert/don_vi_hanh_chinh.json
 
 
 

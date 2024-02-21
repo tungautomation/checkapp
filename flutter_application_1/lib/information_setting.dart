@@ -1,12 +1,34 @@
 
 import 'package:flutter/material.dart';
-// import 'dart:convert';
+import 'dart:convert';
+import 'dart:io';
+import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter_application_1/donvihanhchinh.dart';
+import 'package:flutter_application_1/province-data.dart';
+import 'package:flutter_application_1/screen_1.dart';
 
+String? name_city ;
+String? huyen;
+bool checkgt = false;
+String? namegt = "Nam";
 
 void main() {
   runApp(const Setting());
 }
-String option = "one";
+
+class JsonLoader {
+  Future<Map<String, dynamic>> loadJsonData() async {
+    // Đọc nội dung của tệp JSON từ assets
+    String jsonString = await rootBundle.loadString('assert/don_vi_hanh_chinh.json');
+    
+    // Phân tích nội dung JSON thành một Map
+    Map<String, dynamic> jsonData = jsonDecode(jsonString);
+      return jsonData;
+  }
+}
+
+JsonLoader jsonLoader = JsonLoader();
+
 class Setting extends StatelessWidget {
   const Setting({super.key});
 
@@ -18,6 +40,7 @@ class Setting extends StatelessWidget {
     );
   }
 }
+
 class information extends StatefulWidget {
   const information({super.key});
   @override
@@ -83,21 +106,79 @@ class _informationState extends State<information> {
                 Input_update("Số CCCD / CMTND"),
                 Input_update("Email:*"),
                 Input_update('Số điện thoại:*'),
+                select_gioitinh(),
               ],
             ),
-
+            // dulieu(),
           ],
         ),
       ),
     );
   }
 
+  TableRow select_gioitinh() {
+    return TableRow(
+                children: 
+                [
+                    
+                   CheckboxListTile(
+                    title: Text("$namegt",),
+                    value: checkgt,
+                    subtitle: Text("Giới tính nữ tick !"),
+                    onChanged: (check)
+                    {
+                      setState(() {
+                        checkgt = check!;
+                        checkgt ==true? namegt = "Nữ":namegt = "Nam"; 
+                        namek();
+                      });
+                      
+
+                    }
+                    ),
+                ], 
+                    
+              );
+  }
+
   TableRow Input_update(String labelname) {
     return  TableRow(children: [Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: TableCell(child: TextField(decoration: InputDecoration(labelText: labelname),)),
+
             ),
             ],
             );
+  }
+}
+
+void namek()
+{
+FutureBuilder<Map<String, dynamic>> dulieu() {
+    return FutureBuilder<Map<String, dynamic>>(
+          future: jsonLoader.loadJsonData(),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              // Dữ liệu đã được tải thành côngs
+              Map<String, dynamic> jsonData = snapshot.data!;
+              // Sử dụng dữ liệu ở đây
+              List province_d = jsonData['province'];
+              List provinceList = province_d.map((json) => Province.fromJson(json)).toList();
+              print(provinceList);
+              List<dynamic> name_city = [];
+              
+              provinceList.forEach((rovince) {name_city.add(rovince.name);});
+              var userss = User.fromJson(jsonData);
+
+              return Text("11");
+
+            } else if (snapshot.hasError) {
+              // Xảy ra lỗi khi tải dữ liệu
+              return Text('Error: ${snapshot.error}');
+            }
+            // Hiển thị tiến trình tải
+            return CircularProgressIndicator();
+          },
+        );
   }
 }
