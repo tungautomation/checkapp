@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_application_1/donvihanhchinh.dart';
+// import 'package:flutter/material.dart';
+// import 'package:flutter_application_1/donvihanhchinh.dart';
 class Province
 {
   String id;
@@ -14,4 +14,6 @@ class Province
       level: json['level'],
     );
   }
+
+  static fromMap(json) {}
 }

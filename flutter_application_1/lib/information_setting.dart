@@ -6,8 +6,6 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_application_1/donvihanhchinh.dart';
 import 'package:flutter_application_1/province-data.dart';
 import 'package:flutter_application_1/screen_1.dart';
-
-String? name_city ;
 String? huyen;
 bool checkgt = false;
 String? namegt = "Nam";
@@ -107,9 +105,10 @@ class _informationState extends State<information> {
                 Input_update("Email:*"),
                 Input_update('Số điện thoại:*'),
                 select_gioitinh(),
+                TableRow(children: [dulieu()]),
+                TableRow(children: [dulieu()]),
               ],
             ),
-            // dulieu(),
           ],
         ),
       ),
@@ -129,15 +128,11 @@ class _informationState extends State<information> {
                     {
                       setState(() {
                         checkgt = check!;
-                        checkgt ==true? namegt = "Nữ":namegt = "Nam"; 
-                        namek();
+                        checkgt ==true? namegt = "Nữ":namegt = "Nam";
                       });
-                      
-
                     }
                     ),
                 ], 
-                    
               );
   }
 
@@ -152,8 +147,7 @@ class _informationState extends State<information> {
   }
 }
 
-void namek()
-{
+
 FutureBuilder<Map<String, dynamic>> dulieu() {
     return FutureBuilder<Map<String, dynamic>>(
           future: jsonLoader.loadJsonData(),
@@ -165,12 +159,29 @@ FutureBuilder<Map<String, dynamic>> dulieu() {
               List province_d = jsonData['province'];
               List provinceList = province_d.map((json) => Province.fromJson(json)).toList();
               print(provinceList);
-              List<dynamic> name_city = [];
+              final List<String> name_city = [];
               
               provinceList.forEach((rovince) {name_city.add(rovince.name);});
               var userss = User.fromJson(jsonData);
 
-              return Text("11");
+              return 
+            Container(
+              width: 1000,
+              child: DropdownButton<String>(
+              value: name_city[0],
+              items: name_city.map((String value) {
+                return DropdownMenuItem<String>(
+                  
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+              onChanged: (String? newValue) {
+                print("Selected: $newValue");
+                
+              }
+              ),
+            );
 
             } else if (snapshot.hasError) {
               // Xảy ra lỗi khi tải dữ liệu
@@ -181,4 +192,3 @@ FutureBuilder<Map<String, dynamic>> dulieu() {
           },
         );
   }
-}
